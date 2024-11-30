@@ -1,0 +1,739 @@
+@font-face {
+    font-family:"typo";
+    src: url(fontsas/typo.otf) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family:"uni";
+    src: url(fontsas/uni.otf) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family:"alte";
+    src: url(fontsas/alte.ttf) format('truetype');
+    font-weight: bolder;
+}
+
+
+div.header {
+    position: relative;
+    width: 1280px;
+    height: 110px;
+}
+
+div.footertengah {
+    position: fixed;
+    width: 1280px;
+    bottom: -5px;
+}
+
+div.footersamping {
+    position: fixed;
+    margin-left: 269px;
+    width: 1011px;
+    bottom: -10px;
+    height: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(to bottom right, rgb(69, 175, 211), rgb(103, 176, 209), rgb(156, 202, 225), rgb(195, 223, 236));
+    overflow-x: hidden;
+    z-index: 0;
+}
+
+div.navbar {
+    top: 0;
+    width: 100%;
+    height: 57px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 500;
+    border-left: 3px solid rgb(0, 96, 80);
+}
+
+
+ul.horizontal {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: rgb(59, 167, 82);
+    top: 0;
+    width: 100%;
+    border-top: 3px solid rgb(0, 96, 80);
+    border-bottom: 3px solid rgb(0, 96, 80);
+    border-right: 3px solid rgb(0, 96, 80);
+    height: 48px;
+}
+
+li.horizontal {
+    float: right;
+    border-left: 3px solid rgb(0, 96, 80);
+}
+
+li.horizontal a, .dropbtn {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "typo";
+}
+
+li.horizontal a:hover, .dd:hover, .dropbtn:hover {
+    background-color: rgb(161, 224, 255);
+    color: rgb(59, 167, 82);
+}
+
+.dropbtn:hover:not(.active) {
+    background-color: rgb(161, 224, 255);
+    color: rgb(59, 167, 82);
+}
+
+li.horizontal a.active {
+    background-color: rgb(195, 245, 197);
+    color: rgb(0, 96, 80);
+}
+
+li.ddhorizontal {
+    display: block;
+    float: right;
+    border-left: 3px solid rgb(0, 96, 80);
+}
+
+li.ddhorizontal a, .dropbtn {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "typo";
+}
+
+li.ddhorizontal a:hover, .ddhorizontal:hover, .dropbtn:hover {
+    background-color: rgb(161, 224, 255);
+    color: rgb(59, 167, 82);
+}
+
+li.ddhorizontal a.active {
+    background-color: rgb(195, 245, 197);
+    color: rgb(0, 96, 80);
+}
+
+
+.dd-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(59, 167, 82);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgb(0, 96, 80);
+}
+
+.ddhorizontal:hover .dd-content {
+    display: block;
+}
+
+.dd-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dd-content a:hover {
+    background-color: rgb(161, 224, 255);
+    color: rgb(59, 167, 82);
+}
+
+div.vernavbar {
+    z-index: 250;
+    margin-top: -10px;
+    position: -webkit-sticky;
+    position: sticky;
+    width: 272px;
+    height: calc(100vh - 50px);
+}
+
+
+ul.vertical {
+    position: sticky;
+    top: 10px;
+    left: 0;
+    width: 275px;
+    height: calc(100vh - 50px);
+    background-color: rgb(59, 167, 82);
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    border-left: 3px solid rgb(0, 96, 80);
+    border-right: 3px solid rgb(0, 96, 80);
+    word-spacing: 4px;
+    letter-spacing: 2px;
+}
+
+li.vertical {
+    border-top: 3px solid rgb(0, 96, 80);
+    z-index: 100;
+}
+
+li.vertical:first-child {
+    border-top: none;
+}
+
+li.vertical:last-child {
+    border-bottom: none;
+}
+
+li.vertical a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "typo";
+}
+
+li.vertical a:hover:not(.active) {
+    background-color: rgb(161, 224, 255);
+    color: rgb(59, 167, 82);
+}
+
+li.vertical a.active {
+    background-color: rgb(195, 245, 197);
+    color: rgb(0, 96, 80);
+}
+
+@keyframes move-up{
+    100%{
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
+
+div.text {
+    padding: 20px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+    min-height: 350px;
+}
+
+
+div.textwithver {
+    padding: 20px;
+    margin-left: 285px;
+    width: 930px;
+    margin-top: -530px;
+    opacity: 0%;
+    transform: translateY(30px);
+    animation: move-up 0.5s linear forwards;
+    height: auto;
+    min-height: 480px;
+}
+
+h1.judul {
+    font-family: "Uni";
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    word-spacing: 4px;
+    letter-spacing: 2px;
+}
+
+p.isi {
+    text-align: center;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+}
+
+
+table.Indikator {
+    position: relative;
+    border: 2px solid rgb(27, 54, 104);
+    font-family: 'alte';
+    font-weight: bold;
+    width: 1200px; 
+    border-collapse: separate;
+    background-color: rgb(27, 54, 104);
+    vertical-align: middle;
+    margin-bottom: 55px;
+}
+
+tr{
+    height: 65px;
+    padding: 5px;
+}
+
+th{
+    border: 2px solid white;
+    text-align: center;
+    background-color: rgb(189, 37, 52);
+    font-size: 25px;
+    color: rgb(255, 241, 241);
+    padding: 5px;
+}
+
+td{
+    text-align: center;
+    background-color: rgb(255, 241, 241);
+    font-size: 18px;
+    color: rgb(92, 33, 33);
+    overflow-wrap: break-word;
+    padding: 5px;
+}
+
+p.sblmul {
+    text-align: justify;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+}
+
+ul.ulinfo {
+    text-align: left;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 25px;
+}
+
+li.ulinfo :not(:last-child) {
+    margin-bottom: 3px;
+}
+
+div.tujuansdgs {
+    margin-bottom: 35px;
+}
+
+
+ol.olinfo {
+    text-align: left;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: -20px;
+    position: relative;
+    list-style-type: decimal;
+    list-style-position: outside;
+    line-height: 25px;
+}
+
+li.olinfo {
+    margin: 5px;
+}
+
+li.olinfo :not(:last-child) {
+    margin-bottom: 3px;
+}
+
+div.sdgswheel {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    float: left;
+    margin-left: 775px;
+    margin-top: -500px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+}
+
+.sdgswheel img {
+    width: 425px;
+}
+
+div.image {
+    position: relative;
+    width: 350px;
+    height: auto;
+    float: left;
+    margin-left: 825px;
+    margin-top: -300px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+}
+
+.image img {
+    width: 300px;
+}
+
+div.selamatdatang {
+    margin-top: -15px;
+}
+
+div.textbawah {
+    padding: 20px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+    width: 600px;
+    margin-left: 125px;
+}
+
+p.selamatdatang {
+    text-align: center;
+    color: rgb(10, 10, 56);
+    font-family: "typo";
+    margin-top: 1px;
+    position: relative;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-size: 20px;
+}
+
+p.introisi {
+    text-align: justify;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    text-indent: 30px;
+}
+
+div.pengertianawal {
+    padding: 20px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+    width: 650px;
+    margin-left: 15px;
+}
+
+p.isileft {
+    text-align: justify;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    text-indent: 30px;
+    font-size: 18px;
+}
+
+div.latarbelakangawal {
+    padding: 20px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+    width: 750px;
+    margin-left: 425px;
+}
+
+p.isiright {
+    text-align: justify;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    text-indent: 30px;
+    font-size: 18px;
+}
+
+div.sdgstext {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    margin-top: -260px;
+    margin-left: 775px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+    float: left;
+}
+
+.sdgstext img {
+    width: 350px;
+    border-radius: 25px;
+    border: 5px solid rgb(10, 10, 56);
+    transition: transform 0.3s;
+}
+
+.sdgstext img:hover {
+    transform: scale(1.15);
+}
+
+
+div.leavenoonebehind {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    margin-top: -350px;
+    margin-left: 5px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+    float: left;
+}
+
+.leavenoonebehind img {
+    width: 425px;
+    transition: transform 0.3s;
+}
+
+.leavenoonebehind img:hover {
+    transform: scale(1.15);
+}
+
+p.isitujuan8 {
+    text-align: center;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+div.ulg20 {
+    position: relative;
+    width: 835px;
+    height: auto;
+    float: left;
+    margin-left: 365px;
+    margin-bottom: 50px;
+}
+
+ul.ulinfog20 {
+    text-align: justify;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 25px;
+}
+
+li.ulinfo :not(:last-child) {
+    margin-bottom: 3px;
+}
+
+div.g20img1 {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    margin-top: -425px;
+    margin-left: 30px;
+    opacity: 0%;
+    transform: translateY(15px);
+    animation: move-up 0.5s linear forwards;
+    float: left;
+}
+
+.g20img1 img {
+    width: 350px;
+    transition: transform 0.3s;
+}
+
+.g20img1 img:hover {
+    transform: scale(1.15);
+}
+
+p.garispenting {
+    text-align: center;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div.paragraf1sdgs {
+    margin-left: 5px;
+    width: 470px;
+    margin-top: 0;
+    opacity: 0%;
+    transform: translateY(30px);
+    animation: move-up 0.5s linear forwards;
+    height: auto;
+    position: relative;
+}
+
+div.paragraf2sdgs {
+    margin-left: 500px;
+    margin-top: -198px;
+    width: 420px;
+    float: left;
+    opacity: 0%;
+    transform: translateY(30px);
+    animation: move-up 0.5s linear forwards;
+    height: auto;
+    position: relative;
+}
+
+p.isisdgsker {
+    text-align: justify;
+    text-indent: 30px;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    font-size: 14px;
+}
+
+p.isisdgsker2 {
+    text-align: justify;
+    text-indent: 30px;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    font-size: 18px;
+}
+
+div.target1 {
+    margin-left: 0;
+    width: 290px;
+    margin-top: 0;
+    opacity: 0%;
+    transform: translateY(30px);
+    animation: move-up 0.5s linear forwards;
+    height: auto;
+    position: relative;
+}
+
+div.target2 {
+    margin-left: 310px;
+    width: 250px;
+    margin-top: -235px;
+    opacity: 0%;
+    transform: translateY(30px);
+    animation: move-up 0.5s linear forwards;
+    height: auto;
+    position: relative;
+}
+
+div.target3 {
+    margin-left: 580px;
+    width: 350px;
+    margin-top: -235px;
+    opacity: 0%;
+    transform: translateY(30px);
+    animation: move-up 0.5s linear forwards;
+    height: auto;
+    position: relative;
+}
+
+p.subjudul {
+    text-align: center;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    font-size: 16px;
+}
+
+div.ulinfo {
+    margin-left: -20px;
+}
+
+p.sblmulsdg {
+    text-align: justify;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    font-size: 14px;
+}
+
+ul.ulinfosdgsg20 {
+    text-align: left;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 15px;
+    font-size: 14px;
+}
+
+li.ulinfosdgsg20 :not(:last-child) {
+    margin-bottom: 3px;
+}
+
+div.para1 {
+    margin-top: 30px;
+}
+
+ul.ulinfoperansdgsg20 {
+    text-align: left;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+p.isisdgskerperan {
+    text-align: justify;
+    text-indent: 30px;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    font-size: 16px;
+}
+
+ul.ulinfomanfaatsdgsg20 {
+    text-align: left;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+ul.ulinfosolusisdgsg20 {
+    text-align: left;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 19px;
+    font-size: 15px;
+}
+
+div.daftarpustaka {
+    margin-bottom: 55px;
+}
+
+ul.ulinfodaftarpustaka {
+    text-align: left;
+    color: rgb(10, 10, 56);
+    font-family: "alte";
+    margin-top: 1px;
+    position: relative;
+    list-style-type: circle;
+    list-style-position: outside;
+    line-height: 25px; 
+}
+
+li.ulinfodaftarpustaka :not(:last-child) {
+    margin-bottom: 3px;
+}
